@@ -1,0 +1,51 @@
+// .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled).mat-chip-row--purple {
+//   background-color: #e7e7ff;
+// }
+
+// .mdc-evolution-chip.mat-chip-row--purple {
+//   background-color: #e7e7ff;
+// }
+
+// .mat-chip-row--purple.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
+//   .mdc-evolution-chip__text-label {
+//   color: #5d5fef;
+//   font-size: 1.1rem;
+//   font-weight: 400;
+// }
+
+// .mat-chip-row--purple.mat-mdc-standard-chip.mdc-evolution-chip--with-trailing-action
+//   .mdc-evolution-chip__action--trailing
+//   .path-marker {
+//   stroke: #5d5fef;
+// }
+
+// .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled).mat-chip-row--gold {
+//   background-color: #fffaea;
+// }
+
+// .mdc-evolution-chip.mat-chip-row--gold {
+//   background-color: #fffaea;
+// }
+
+// .mat-chip-row--gold.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
+//   .mdc-evolution-chip__text-label {
+//   color: #f5ba00;
+//   font-size: 1.1rem;
+//   font-weight: 400;
+// }
+
+// .mat-chip-row--gold.mat-mdc-standard-chip.mdc-evolution-chip--with-trailing-action
+//   .mdc-evolution-chip__action--trailing
+//   .path-marker {
+//   stroke: #f5ba00;
+// }
+
+.te__chip.mat-mdc-standard-chip .mdc-evolution-chip__action--primary:before {
+  border-radius: 0;
+}
+
+.te__chip.mat-mdc-standard-chip .mdc-evolution-chip__text-label {
+  color: #808080;
+  font-size: 1rem;
+  font-weight: 400;
+}

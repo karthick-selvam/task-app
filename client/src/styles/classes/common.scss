@@ -1,0 +1,23 @@
+.indicator {
+  &__red--top-right {
+    width: 6px;
+    height: 6px;
+    border-radius: 0.4rem;
+    background: #ff7488;
+
+    position: absolute;
+    top: 2px;
+    right: 2px;
+  }
+
+  &__red--top-left {
+    width: 6px;
+    height: 6px;
+    border-radius: 0.4rem;
+    background: #ff7488;
+
+    position: absolute;
+    top: 4px;
+    left: 4px;
+  }
+}

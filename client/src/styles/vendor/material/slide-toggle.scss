@@ -1,0 +1,94 @@
+.te__slide-toggle .mdc-switch {
+  width: 2.2rem;
+  height: 1.1rem;
+}
+.te__slide-toggle .mdc-switch .mdc-switch__handle-track {
+  width: calc(100% - 1.2rem);
+}
+.te__slide-toggle .mdc-switch .mdc-switch__handle {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+}
+.te__slide-toggle.mat-mdc-slide-toggle .mdc-label {
+  color: #292c2f;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1;
+  padding-left: 1rem;
+}
+.te__slide-toggle--no-label.mat-mdc-slide-toggle .mdc-label {
+  display: none;
+}
+
+.te__slide-toggle .mdc-switch__icons {
+  display: none;
+}
+.te__slide-toggle.mat-mdc-slide-toggle
+  .mdc-switch:enabled
+  .mdc-switch__track::before {
+  background: #b2b2b2;
+}
+.te__slide-toggle.mat-mdc-slide-toggle
+  .mdc-switch:enabled
+  .mdc-switch__track::after {
+  background: #259fff;
+}
+.te__slide-toggle
+  .mdc-switch:enabled:hover:not(:focus):not(:active)
+  .mdc-switch__track::before {
+  background: #b2b2b2;
+}
+.te__slide-toggle
+  .mdc-switch:enabled:hover:not(:focus):not(:active)
+  .mdc-switch__track::after {
+  background: #259fff;
+}
+.te__slide-toggle
+  .mdc-switch:enabled:focus:not(:active)
+  .mdc-switch__track::after {
+  background: #259fff;
+}
+.te__slide-toggle
+  .mdc-switch.mdc-switch--selected:enabled
+  .mdc-switch__handle::after {
+  background: #fff;
+}
+.te__slide-toggle
+  .mdc-switch.mdc-switch--selected:enabled:active
+  .mdc-switch__handle::after {
+  background: #fff;
+}
+.te__slide-toggle
+  .mdc-switch.mdc-switch--selected:enabled:focus:not(:active)
+  .mdc-switch__handle::after {
+  background: #fff;
+}
+.te__slide-toggle
+  .mdc-switch.mdc-switch--selected:enabled:hover:not(:focus):not(:active)
+  .mdc-switch__handle::after {
+  background: #fff;
+}
+.te__slide-toggle
+  .mdc-switch.mdc-switch--unselected:enabled
+  .mdc-switch__handle::after {
+  background: #fff;
+}
+.te__slide-toggle
+  .mdc-switch.mdc-switch--unselected:enabled:hover:not(:focus):not(:active)
+  .mdc-switch__handle::after {
+  background: #fff;
+}
+.te__slide-toggle
+  .mdc-switch.mdc-switch--unselected:enabled:active
+  .mdc-switch__handle::after {
+  background: #fff;
+}
+.te__slide-toggle
+  .mdc-switch.mdc-switch--unselected:enabled:focus:not(:active)
+  .mdc-switch__handle::after {
+  background: #fff;
+}
+.te__slide-toggle .mdc-switch .mdc-switch__ripple {
+  display: none;
+}

@@ -1,0 +1,113 @@
+.btn {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  cursor: pointer;
+  padding: 1rem;
+
+  &--icon {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--icon-only {
+    display: flex;
+    padding: 0;
+  }
+
+  &--filter {
+    border-radius: 1rem;
+    background: #e8f4ff;
+    color: #707e87;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      background-color: darken($color: #e8f4ff, $amount: 2);
+    }
+  }
+
+  &--secondary {
+    border-radius: 5px;
+    border: 1px solid #707e87;
+    background-color: #fff;
+    color: #808080;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      background-color: darken($color: #fff, $amount: 3);
+      border: 1px solid darken($color: #707e87, $amount: 4);
+    }
+  }
+
+  &--primary {
+    border: 1px solid #259fff;
+    border-radius: 0.5rem;
+    background: #259fff;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      background-color: darken($color: #259fff, $amount: 6);
+      border: 1px solid darken($color: #259fff, $amount: 6);
+    }
+  }
+
+  &--primary-disabled {
+    background: #808080;
+    border: 1px solid #808080;
+    cursor: default;
+
+    &:hover {
+      background: #808080;
+      border: 1px solid #808080;
+    }
+  }
+
+  &--warning {
+    border: 1px solid #eb5757;
+    border-radius: 0.5rem;
+    background: #eb5757;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      background-color: darken($color: #eb5757, $amount: 6);
+      border: 1px solid darken($color: #eb5757, $amount: 6);
+    }
+  }
+
+  &__violet {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 400;
+    border-radius: 1rem;
+    background-color: #5d5fef;
+  }
+
+  &__transparent-primary-border {
+    color: #259fff;
+    font-size: 1.2rem;
+    font-weight: 400;
+    border-radius: 1rem;
+    border: 1px solid #259fff;
+    background-color: #fff;
+    transition: all 0.3s ease-out;
+
+    &--selected {
+      background-color: #259fff;
+      color: #fff;
+    }
+    &:hover {
+      background-color: #259fff;
+      color: #fff;
+    }
+  }
+}

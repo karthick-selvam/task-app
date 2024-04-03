@@ -1,0 +1,58 @@
+.register {
+  padding: 0 4rem 5rem 4rem;
+
+  &__title {
+    color: #259fff;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1.8rem;
+  }
+
+  &__form {
+    margin-bottom: 1rem;
+    &-field {
+      width: 100%;
+    }
+    &-controls {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5rem;
+    }
+    &-cnfrm-password {
+      margin-bottom: 1rem;
+    }
+    &-btns {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+  }
+
+  &__existing-user-text:link,
+  &__existing-user-text:visited {
+    display: block;
+    color: #292c2f;
+    text-align: center;
+    font-size: 1.4rem;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: darken($color: #259fff, $amount: 5);
+    }
+  }
+}
+
+.loader-spinner {
+  &__box {
+    transform: translateX(8px);
+  }
+  &__box.hide {
+    opacity: 0;
+  }
+  &__box.show {
+    opacity: 1;
+  }
+}

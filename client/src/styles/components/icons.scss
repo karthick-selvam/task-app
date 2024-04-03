@@ -1,0 +1,82 @@
+svg-icon {
+  display: inline-flex;
+}
+.icon-stop-sign--selected .marker {
+  stroke: #ff7488;
+  transition: all 0.3s ease-out;
+}
+
+.icon-crown--selected .marker {
+  stroke: #ffc920;
+  transition: all 0.3s ease-out;
+}
+
+.icon-camera-dome--primary .marker {
+  stroke: #259fff;
+  transition: all 0.3s ease-out;
+}
+
+.icon-camera-dome--orange .marker {
+  stroke: #ffc920;
+  transition: all 0.3s ease-out;
+}
+
+.icon-add--primary .marker {
+  stroke: #259fff;
+  transition: all 0.3s ease-out;
+}
+.icon-calander--gray .marker {
+  stroke: #e1e7ec;
+}
+
+.icon-clock--primary .marker {
+  stroke: #259fff;
+}
+
+.icon-bell-alarm--primary .marker {
+  stroke: #259fff;
+}
+
+.icon-square-box-edges--white .marker {
+  stroke: #fff;
+}
+
+.icon-plus--gray .marker {
+  stroke: #455a64;
+}
+
+.icon-minus--gray .marker {
+  stroke: #455a64;
+}
+
+.icon-feed-delete--gray .marker {
+  fill: #455a64;
+}
+
+.icon-link--2--primary .marker {
+  fill: #259fff;
+  transition: all 0.3s ease-out;
+}
+
+.icon-eye .marker {
+  transition: all 0.3s ease-out;
+}
+.icon-close {
+  transition: all 0.3s ease-out;
+
+  &--purple .marker {
+    stroke: #5d5fef;
+  }
+}
+
+.icon-clock {
+  transition: all 0.3s ease-out;
+
+  &--primary .marker {
+    stroke: #259fff;
+  }
+
+  &--input-gray .marker {
+    stroke: #707e87;
+  }
+}

@@ -1,0 +1,79 @@
+<div class="paginator-container">
+  <div class="paginator-pages">
+    <p>Showing {{ totalPages ? currentPage : 0 }} out of {{ totalPages }}</p>
+  </div>
+  <div class="paginator-nav">
+    <button
+      class="btn paginator-nav__btn"
+      [disabled]="currentPage == 1 || !totalPages"
+      [ngClass]="{
+        'paginator-nav__btn--disabled': currentPage == 1 || !totalPages
+      }"
+      (click)="onFirstPageClick()"
+    >
+      <svg-icon
+        [src]="'assets/icons/icon-paginator-first-page.svg'"
+        [class]="'icon-paginator-first-page'"
+        [applyClass]="true"
+      ></svg-icon>
+    </button>
+
+    <button
+      class="btn paginator-nav__btn"
+      [disabled]="currentPage == 1 || !totalPages"
+      [ngClass]="{
+        'paginator-nav__btn--disabled': currentPage == 1 || !totalPages
+      }"
+      (click)="onPrevPageClick()"
+    >
+      <svg-icon
+        [src]="'assets/icons/icon-paginator-prev.svg'"
+        [class]="'icon-paginator-prev'"
+        [applyClass]="true"
+      ></svg-icon>
+    </button>
+
+    <button
+      *ngFor="let page of generateVisiblePageArray()"
+      class="btn paginator-nav__page-btn"
+      [ngClass]="{
+        'paginator-nav__page-btn--active': currentPage === page || !totalPages,
+        ellipsis: page === '...'
+      }"
+      [disabled]="page === '...' || !totalPages"
+      (click)="onPageClick(page)"
+    >
+      {{ page }}
+    </button>
+
+    <button
+      class="btn paginator-nav__btn"
+      [disabled]="currentPage == totalPages || !totalPages"
+      [ngClass]="{
+        'paginator-nav__btn--disabled': currentPage == totalPages || !totalPages
+      }"
+      (click)="onNextPageClick()"
+    >
+      <svg-icon
+        [src]="'assets/icons/icon-paginator-next.svg'"
+        [class]="'icon-paginator-last-page'"
+        [applyClass]="true"
+      ></svg-icon>
+    </button>
+
+    <button
+      class="btn paginator-nav__btn"
+      [disabled]="currentPage == totalPages || !totalPages"
+      [ngClass]="{
+        'paginator-nav__btn--disabled': currentPage == totalPages || !totalPages
+      }"
+      (click)="onLastPageClick()"
+    >
+      <svg-icon
+        [src]="'assets/icons/icon-paginator-last-page.svg'"
+        [class]="'icon-paginator-next'"
+        [applyClass]="true"
+      ></svg-icon>
+    </button>
+  </div>
+</div>

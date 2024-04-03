@@ -1,0 +1,58 @@
+.login {
+  padding: 0 4rem 5rem 4rem;
+  &__title {
+    color: #259fff;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1.8rem;
+  }
+
+  &__form {
+    &-field {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    &-password {
+      position: relative;
+    }
+    &-errors {
+      position: absolute;
+      left: 0.6rem;
+      bottom: 1rem;
+    }
+    &-controls {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5rem;
+    }
+
+    &-forgot {
+      color: #ffa7a7;
+      font-size: 1.2rem;
+    }
+
+    &-remember {
+      color: #9d9d9c;
+      font-size: 1.2rem;
+    }
+
+    &-btns {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 0.6rem;
+    }
+  }
+}
+
+.loader-spinner {
+  &__box {
+    transform: translateX(8px);
+  }
+  &__box.hide {
+    opacity: 0;
+  }
+  &__box.show {
+    opacity: 1;
+  }
+}

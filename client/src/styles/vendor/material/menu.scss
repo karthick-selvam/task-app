@@ -1,0 +1,12 @@
+.mat-mdc-menu-panel .mat-mdc-menu-content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.mat-mdc-menu-panel.mat-mdc-elevation-specific.mat-elevation-z8 {
+  width: fit-content;
+  max-width: none;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e8f4ff;
+  background: #fff;
+}

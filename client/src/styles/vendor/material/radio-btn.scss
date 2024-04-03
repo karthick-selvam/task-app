@@ -1,0 +1,81 @@
+.mat-mdc-radio-group .mat-mdc-radio-button .mdc-radio {
+  padding: 0;
+}
+.mat-mdc-radio-button > .mdc-form-field > label {
+  color: #707e87;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.radio__label-sm .mat-mdc-radio-button > .mdc-form-field > label {
+  color: #808080;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.mat-mdc-radio-checked.mat-mdc-radio-button > .mdc-form-field > label {
+  color: #292c2f;
+}
+.mat-mdc-radio-button .mdc-radio {
+  --mdc-radio-state-layer-size: 24px;
+}
+
+.mat-mdc-radio-button .mat-mdc-radio-touch-target {
+  width: 20px;
+  height: 20px;
+}
+
+.mat-mdc-radio-button
+  .mdc-radio
+  .mdc-radio__native-control:enabled:checked
+  + .mdc-radio__background
+  .mdc-radio__outer-circle:first-of-type {
+  border-color: #ddd;
+}
+
+.mat-mdc-radio-button
+  .mdc-radio
+  .mdc-radio__native-control:enabled:not(:checked)
+  + .mdc-radio__background
+  .mdc-radio__outer-circle:first-of-type {
+  border-color: #ddd;
+}
+
+.mat-mdc-radio-button
+  .mdc-radio
+  .mdc-radio__native-control:enabled
+  + .mdc-radio__background
+  .mdc-radio__inner-circle:last-of-type {
+  border-color: #259fff;
+}
+
+.mdc-radio:hover
+  .mdc-radio__native-control:enabled:checked
+  + .mdc-radio__background
+  .mdc-radio__outer-circle:first-of-type {
+  border-color: #ddd;
+}
+
+.mat-mdc-radio-button
+  .mdc-radio:hover
+  .mdc-radio__native-control:enabled:checked
+  + .mdc-radio__background
+  .mdc-radio__outer-circle:first-of-type {
+  border-color: #ddd;
+}
+
+.mat-mdc-radio-button
+  .mdc-radio:hover
+  .mdc-radio__native-control:enabled:not(:checked)
+  + .mdc-radio__background
+  .mdc-radio__outer-circle:first-of-type {
+  border-color: #259fff;
+}
+
+.mat-mdc-radio-button
+  .mdc-radio:hover
+  .mdc-radio__native-control:enabled
+  + .mdc-radio__background
+  .mdc-radio__inner-circle:last-of-type {
+  border-color: #259fff;
+}

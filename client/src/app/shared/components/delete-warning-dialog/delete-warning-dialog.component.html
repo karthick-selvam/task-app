@@ -1,0 +1,19 @@
+<div class="dialog__box">
+  <p class="dialog__title">{{ title }}</p>
+  <p class="dialog__que">{{ question }}</p>
+
+  <div class="dialog__action-btn-box">
+    <button
+      class="btn btn--secondary dialog__action-btn dialog__cancel-btn"
+      (click)="closeDialog(false)"
+    >
+      Cancel
+    </button>
+    <button
+      class="btn btn--warning dialog__action-btn dialog__delete-btn"
+      (click)="closeDialog(true)"
+    >
+      Delete
+    </button>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="te-widget-card">
+  <h3 class="te-widget-card__title" *ngIf="widgetTitle && widgetTitleIconPath">
+    <svg-icon [src]="widgetTitleIconPath"></svg-icon>
+    <span>{{ widgetTitle }}</span>
+  </h3>
+  <ng-content></ng-content>
+</div>

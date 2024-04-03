@@ -1,0 +1,90 @@
+<div class="login" (keyup)="onPressEnter($event.keyCode)">
+  <h2 class="login__title">Login to your account</h2>
+  <form class="login__form" [formGroup]="loginForm">
+    <div class="login__form-org">
+      <mat-form-field class="login__form-field" appearance="fill">
+        <mat-label>Organization</mat-label>
+        <mat-select formControlName="organization" class="te-select">
+          <mat-option
+            class="te-select__option"
+            *ngFor="let options of organizations"
+            [value]="options._id"
+          >
+            {{ options.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="login__form-username">
+      <mat-form-field class="login__form-field" appearance="fill">
+        <mat-label>Username or email</mat-label>
+        <input matInput autocomplete="off" formControlName="username" />
+
+        <mat-error *ngIf="loginForm.get('username')?.errors?.['required']"
+          >Email or Username is required</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="login__form-password">
+      <mat-form-field class="login__form-field" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          autocomplete="off"
+          formControlName="password"
+          [type]="passwordVisible ? 'text' : 'password'"
+        />
+
+        <button
+          matSuffix
+          class="btn btn--icon-only"
+          (click)="togglePasswordVisbility($event)"
+        >
+          <svg-icon src="assets/icons/icon-open-eye.svg"></svg-icon>
+        </button>
+
+        <mat-error *ngIf="loginForm.get('password')?.errors?.['required']"
+          >Password is required</mat-error
+        >
+      </mat-form-field>
+
+      <div class="login__form-errors">
+        <mat-error class="form-error" *ngIf="loginForm.errors?.['invalidAuth']">
+          Invalid username or password</mat-error
+        >
+        <mat-error
+          class="form-error"
+          *ngIf="loginForm.errors?.['sessionNotCreated']"
+        >
+          Session creation failed</mat-error
+        >
+        <mat-error class="form-error" *ngIf="loginForm.errors?.['reqFailed']">
+          Internal server error</mat-error
+        >
+      </div>
+    </div>
+
+    <!-- <div class="login__form-controls">
+      <span class="login__form-forgot">Forgot Password?</span>
+      <span class="login__form-remember">Remember me</span>
+    </div> -->
+
+    <div class="login__form-btns">
+      <button class="btn btn--secondary" [routerLink]="['signup']">
+        Register
+      </button>
+      <button class="btn btn--icon btn--primary" (click)="loginUser()">
+        <span> Login </span>
+
+        <div
+          class="loader-spinner__box"
+          [ngClass]="{ hide: !loader, show: loader }"
+        >
+          <mat-spinner class="te-spinner--white" diameter="16"></mat-spinner>
+        </div>
+      </button>
+    </div>
+  </form>
+</div>

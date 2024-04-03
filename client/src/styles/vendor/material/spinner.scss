@@ -1,0 +1,8 @@
+.te-spinner {
+  &--white.mat-mdc-progress-spinner {
+    --mdc-circular-progress-active-indicator-color: #fff;
+  }
+  &--red.mat-mdc-progress-spinner {
+    --mdc-circular-progress-active-indicator-color: #eb5757;
+  }
+}

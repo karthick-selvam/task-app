@@ -1,0 +1,122 @@
+.mat-mdc-text-field-wrapper.mdc-text-field--filled {
+  height: 4rem;
+  border-radius: 0.8rem;
+}
+
+.mat-mdc-form-field-flex {
+  height: 4rem;
+}
+
+.mat-mdc-form-field-flex .mat-mdc-form-field-infix {
+  width: 100px;
+  height: 4rem;
+  min-height: 0;
+}
+.mat-mdc-form-field-type-mat-date-range-input
+  .mat-mdc-form-field-flex
+  .mat-mdc-form-field-infix {
+  width: 150px;
+}
+.mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined)
+  .mat-mdc-form-field-infix {
+  padding-top: 0.8rem;
+}
+
+.mat-mdc-form-field .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #f9f9f9;
+}
+
+.mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+  top: 19px;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.mat-mdc-text-field-wrapper.mdc-text-field--filled:not(
+    .mdc-text-field--disabled
+  )
+  .mdc-floating-label {
+  color: #707e87;
+  opacity: 0.9;
+}
+
+.mdc-line-ripple {
+  display: none;
+}
+
+.mat-mdc-form-field.mat-mdc-form-field-has-icon-suffix
+  .mat-mdc-text-field-wrapper {
+  padding-right: 1.6rem;
+}
+
+.mat-mdc-form-field-input-control.mat-mdc-input-element.mdc-text-field__input {
+  font-size: 1.3rem;
+  margin-top: 0.6rem;
+}
+
+.mat-form-field-no-label
+  .mat-mdc-form-field-input-control.mat-mdc-input-element.mdc-text-field__input {
+  margin-top: 0;
+}
+
+.mat-form-field-no-label
+  .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(
+    .mdc-text-field--textarea
+  )
+  .mat-mdc-form-field-infix {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.hide-mat-error-field
+  .mat-mdc-form-field-subscript-wrapper.mat-mdc-form-field-bottom-align {
+  display: none;
+}
+.mat-mdc-form-field .mat-mdc-form-field-icon-prefix {
+  padding: 0 1rem;
+}
+
+.mat-mdc-form-field .mat-mdc-icon-button.mat-mdc-button-base {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+}
+
+.mat-mdc-form-field .mat-mdc-icon-button .mat-mdc-button-touch-target {
+  display: none;
+}
+
+.mat-mdc-form-field .mat-mdc-icon-button .mat-mdc-button-persistent-ripple {
+  display: none;
+}
+.mat-mdc-form-field .mat-mdc-icon-button .mat-mdc-focus-indicator {
+  display: none;
+}
+
+.mat-mdc-form-field .mat-mdc-icon-button .mat-mdc-button-ripple {
+  display: none;
+}
+// MAT-SELECT
+.mat-mdc-select .mat-mdc-select-value-text {
+  color: #292c2f;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.mat-mdc-select .mat-mdc-select-value {
+  margin-top: 0.6rem;
+}
+
+.mat-mdc-select-panel.mdc-menu-surface {
+  padding: 0;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  padding-top: 1rem;
+}
+.te-select__option.mat-mdc-option.mdc-list-item:first-of-type {
+  border-top: 1px solid #e5f2fd;
+}
+.mat-mdc-option.mdc-list-item {
+  color: #292c2f;
+  font-size: 1.2rem;
+  font-weight: 400;
+}

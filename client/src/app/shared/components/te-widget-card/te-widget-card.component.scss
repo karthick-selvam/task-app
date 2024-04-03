@@ -1,0 +1,19 @@
+.te-widget-card {
+  border-radius: 1.5rem;
+  background: #fff;
+  box-shadow: 4px 4px 15px 0px rgba(0, 143, 255, 0.05);
+  // padding: 2rem 1rem;
+  height: 100%;
+
+  &__title {
+    color: #292c2f;
+    font-family: "Exo 2";
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.1;
+
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+}

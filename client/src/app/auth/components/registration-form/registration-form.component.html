@@ -1,0 +1,169 @@
+<div class="register">
+  <h2 class="register__title">Register new account</h2>
+  <form class="register__form" [formGroup]="registrationForm">
+    <div class="register__org">
+      <mat-form-field
+        class="register__form-field te-autocomplete"
+        appearance="fill"
+      >
+        <mat-label>Organization</mat-label>
+
+        <input
+          matInput
+          formControlName="organization"
+          [matAutocomplete]="auto"
+          (input)="filterOrganizations($event.target)"
+        />
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <ng-container *ngFor="let option of filteredOrganizations">
+            <mat-option class="te-autocomplete__option" [value]="option._id">
+              {{ option.name }}
+            </mat-option>
+          </ng-container>
+
+          <mat-option
+            class="te-autocomplete__option--create"
+            *ngIf="showCreateNewOption"
+            (onSelectionChange)="createNewOrganization()"
+          >
+            <svg-icon src="assets/icons/icon-add.svg"></svg-icon>
+            <span
+              >Create new Organization "{{
+                registrationForm.get("organization")?.value
+              }}"</span
+            >
+          </mat-option>
+        </mat-autocomplete>
+
+        <mat-error
+          *ngIf="registrationForm.get('organization')?.errors?.['required']"
+          >Organization is required</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="register__form-username">
+      <mat-form-field class="register__form-field" appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput autocomplete="off" formControlName="username" />
+
+        <mat-error
+          *ngIf="registrationForm.get('username')?.errors?.['required']"
+          >Username is required</mat-error
+        >
+        <mat-error
+          *ngIf="registrationForm.get('username')?.errors?.['minlength']"
+          >Username should have atleast
+          {{registrationForm.get('username')?.errors?.['minlength'].requiredLength}}
+          characters</mat-error
+        >
+        <mat-error
+          *ngIf="registrationForm.get('username')?.errors?.['maxlength']"
+          >Username should not exceed
+          {{registrationForm.get('username')?.errors?.['maxlength'].requiredLength}}
+          characters</mat-error
+        >
+        <mat-error
+          *ngIf="registrationForm.get('username')?.errors?.['nonUniqueUsername']"
+          >Username is already taken</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="register__form-password">
+      <mat-form-field class="register__form-field" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          autocomplete="off"
+          formControlName="password"
+          [type]="passwordVisible ? 'text' : 'password'"
+        />
+
+        <button
+          matSuffix
+          class="btn btn--icon-only"
+          (click)="togglePasswordVisbility($event)"
+        >
+          <svg-icon src="assets/icons/icon-open-eye.svg"></svg-icon>
+        </button>
+
+        <mat-error
+          *ngIf="registrationForm.get('password')?.errors?.['required']"
+          >Password is required</mat-error
+        >
+
+        <mat-error
+          *ngIf="registrationForm.get('password')?.errors?.['minlength']"
+          >Password should have atleast
+          {{registrationForm.get('password')?.errors?.['minlength'].requiredLength}}
+          characters</mat-error
+        >
+        <mat-error
+          *ngIf="registrationForm.get('password')?.errors?.['maxlength']"
+          >Password should not exceed
+          {{registrationForm.get('password')?.errors?.['maxlength'].requiredLength}}
+          characters</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="register__form-cnfrm-password">
+      <mat-form-field class="register__form-field" appearance="fill">
+        <mat-label>Confirm Password</mat-label>
+        <input
+          type="password"
+          matInput
+          autocomplete="off"
+          formControlName="confirmPassword"
+        />
+
+        <mat-error
+          *ngIf="registrationForm.get('confirmPassword')?.errors?.['required']"
+          >Password confirmation is required</mat-error
+        >
+
+        <mat-error
+          *ngIf="registrationForm?.get('confirmPassword')?.errors?.['passwordsDontMatch']"
+          >Password and Confirmation do not match</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="register__form-role">
+      <mat-form-field class="register__form-field" appearance="fill">
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role" class="te-select">
+          <mat-option
+            class="te-select__option"
+            *ngFor="let options of roleOptions"
+            [value]="options.value"
+          >
+            {{ options.label }}
+          </mat-option>
+        </mat-select>
+
+        <mat-error *ngIf="registrationForm?.get('role')?.errors?.['required']"
+          >Please select Role</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="register__form-btns">
+      <button class="btn btn--secondary" (click)="resetForm()">Reset</button>
+      <button class="btn btn--icon btn--primary" (click)="registerNewUser()">
+        <span>Register</span>
+        <div
+          class="loader-spinner__box"
+          [ngClass]="{ hide: !loader, show: loader }"
+        >
+          <mat-spinner class="te-spinner--white" diameter="16"></mat-spinner>
+        </div>
+      </button>
+    </div>
+  </form>
+
+  <a class="register__existing-user-text" routerLink="/"
+    >Existing user? Click here to login</a
+  >
+</div>

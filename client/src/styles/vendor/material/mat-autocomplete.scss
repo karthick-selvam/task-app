@@ -1,0 +1,29 @@
+.mat-mdc-autocomplete-panel.mdc-menu-surface {
+  padding: 0;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  padding-top: 1rem;
+}
+
+.te-autocomplete__option.mat-mdc-option.mdc-list-item:first-of-type {
+  border-top: 1px solid #e5f2fd;
+}
+
+.te-autocomplete__option--create.mat-mdc-option.mdc-list-item {
+  background-color: #5d5fef;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.te-autocomplete__option--create.mat-mdc-option:hover:not(
+    .mdc-list-item--disabled
+  ) {
+  background-color: lighten($color: #5d5fef, $amount: 3);
+}
+
+.mat-mdc-option.mdc-list-item.te-autocomplete__option--create
+  .mdc-list-item__primary-text {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}

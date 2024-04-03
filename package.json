@@ -1,0 +1,19 @@
+{
+  "name": "third-eye",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix api",
+    "install-client": "npm install --prefix client",
+    "install": "npm run install-client && npm run install-client",
+    "server": "npm run watch --prefix api",
+    "client": "npm start --prefix client",
+    "watch": "npm run server && npm run client",
+    "deploy:dev": "npm run build-prod --prefix client && npm run watch:dev --prefix api",
+    "deploy": "npm run build-prod --prefix client && npm run watch:prod --prefix api"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

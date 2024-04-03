@@ -1,0 +1,21 @@
+.auth {
+  &-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(0deg, #fff 44.89%, #effeff 100%);
+  }
+
+  &-card {
+    min-width: 38rem;
+    justify-self: center;
+    align-self: center;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 24px -0.77419px rgba(37, 159, 255, 0.1);
+    position: relative;
+    padding-top: 5rem;
+  }
+}

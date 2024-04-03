@@ -1,0 +1,49 @@
+<div class="te__app-container">
+  <div class="te-nav" *ngIf="isUserAuthenticated">
+    <div class="user">
+      <button
+        class="btn btn--icon user__btn"
+        [matMenuTriggerFor]="userOptions"
+        (menuOpened)="isUserOptionsMenuOpen = true"
+        (menuClosed)="isUserOptionsMenuOpen = false"
+      >
+        <div class="user__dp">
+          {{ userDetails?.username?.[0] | titlecase }}
+        </div>
+        <span class="user__text">{{ userDetails?.username | titlecase }}</span>
+        <svg-icon
+          class="user__icon"
+          [ngClass]="{ 'user__icon--rotated': isUserOptionsMenuOpen }"
+          src="assets/icons/icon-chevron-down.svg"
+        ></svg-icon>
+      </button>
+
+      <mat-menu #userOptions="matMenu" xPosition="before">
+        <ng-container matMenuContent>
+          <ul class="user-options__list">
+            <li class="user-options__logout">
+              <button class="btn btn--icon" (click)="logoutUser()">
+                <svg-icon
+                  class="user-options__logout-icon"
+                  src="assets/icons/icon-sign-out.svg"
+                ></svg-icon>
+                <span class="user-options__text user-options__logout-text"
+                  >Logout</span
+                >
+              </button>
+            </li>
+          </ul>
+        </ng-container>
+      </mat-menu>
+    </div>
+  </div>
+
+  <div
+    class="te-nav__panel"
+    [ngClass]="isUserAuthenticated ? '' : 'te-nav__panel--full'"
+  >
+    <mat-tab-nav-panel #tabPanel>
+      <router-outlet></router-outlet>
+    </mat-tab-nav-panel>
+  </div>
+</div>

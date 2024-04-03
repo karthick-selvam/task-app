@@ -1,0 +1,80 @@
+<div class="add-task__container">
+  <form class="add-task__form" [formGroup]="addTaskForm">
+    <div class="add-task__form-user">
+      <mat-form-field class="add-task__form-field" appearance="fill">
+        <mat-label>User</mat-label>
+        <mat-select formControlName="assignee" class="te-select">
+          <ng-container *ngIf="users.length">
+            <mat-option
+              class="te-select__option"
+              *ngFor="let options of users"
+              [value]="options"
+            >
+              {{ options.username }}
+            </mat-option>
+          </ng-container>
+
+          <mat-option class="te-select__option" *ngIf="!users.length">
+            There is no users created under the organization
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="add-task__form-designation">
+      <mat-form-field class="add-task__form-field" appearance="fill">
+        <mat-label>Designation</mat-label>
+        <input matInput autocomplete="off" formControlName="designation" />
+
+        <mat-error *ngIf="addTaskForm.get('designation')?.errors?.['required']"
+          >Employee Designation is required</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="add-task__form-task-description">
+      <mat-form-field class="add-task__form-field" appearance="fill">
+        <mat-label>Task Description</mat-label>
+        <textarea
+          matInput
+          matTextareaAutosize
+          matTextareaAutosizeMaxRows="5"
+          autocomplete="off"
+          formControlName="taskDescription"
+        ></textarea>
+
+        <mat-error
+          *ngIf="addTaskForm.get('taskDescription')?.errors?.['required']"
+          >Task Description is required</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="add-task__form-ETC">
+      <mat-form-field class="add-task__form-field" appearance="fill">
+        <mat-label>Estimated Time of Completion (ETC)</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          formControlName="ETC"
+          placeholder="Choose ETC"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+        <mat-error *ngIf="addTaskForm.get('ETC')?.errors?.['required']"
+          >Estimated Time of Completion is required</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="add-task__form-btns">
+      <button class="btn btn--secondary" (click)="resetTasksForm()">
+        Reset
+      </button>
+      <button class="btn btn--icon btn--primary" (click)="addTask()">
+        {{ data?.taskId ? "Update" : "Create" }}
+      </button>
+    </div>
+  </form>
+</div>

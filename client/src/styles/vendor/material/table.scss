@@ -1,0 +1,31 @@
+.mat-mdc-table {
+  & thead {
+    & tr {
+      height: 3.4rem;
+      background-color: #e8f4ff;
+      color: #292c2f;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    & th {
+      border-bottom: none;
+    }
+  }
+
+  & tbody tr {
+    height: 3.4rem;
+    color: #292c2f;
+    font-family: "Inter";
+    font-size: 1.2rem;
+
+    & td {
+      border-bottom: 1px solid #e8f4ff;
+      text-wrap: nowrap;
+
+      &.mat-cell--empty {
+        position: relative;
+      }
+    }
+  }
+}

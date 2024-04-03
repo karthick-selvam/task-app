@@ -1,0 +1,17 @@
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 5px;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+
+.te-scroll-bar {
+  padding-right: 0.8rem;
+  &:hover::-webkit-scrollbar {
+    opacity: 1;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+}

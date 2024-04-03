@@ -1,0 +1,37 @@
+.data {
+  &__table-ctrls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+  }
+  &__table-box {
+    padding: 1.5rem;
+  }
+  &__table-actions-box {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+  }
+}
+
+.no-data {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+
+  &__text {
+    &--main {
+      color: #292c2f;
+      font-size: 1.6rem;
+      font-weight: 300;
+      margin-bottom: 0.6rem;
+    }
+
+    &--sub {
+      color: #808080;
+      font-size: 1.2rem;
+    }
+  }
+}

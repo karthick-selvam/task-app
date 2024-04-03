@@ -1,0 +1,117 @@
+<app-te-widget-card>
+  <div class="data__table-box">
+    <div class="data__table-ctrls">
+      <button class="btn btn--primary" (click)="openTaskModal()">
+        Create Task
+      </button>
+    </div>
+    <table
+      mat-table
+      matSort
+      [dataSource]="dataSource"
+      #faceRecTbleSort="matSort"
+      matSortActive="entryTime"
+      matSortDirection="desc"
+    >
+      <!-- Employee name Column -->
+      <ng-container matColumnDef="assigneeName">
+        <th class="data__table-col-header" mat-header-cell *matHeaderCellDef>
+          Assignee Name
+        </th>
+        <td class="data__table-col-data" mat-cell *matCellDef="let element">
+          {{ element.assigneeName | titlecase }}
+        </td>
+      </ng-container>
+
+      <!-- Designation Column -->
+      <ng-container matColumnDef="designation">
+        <th class="data__table-col-header" mat-header-cell *matHeaderCellDef>
+          Designation
+        </th>
+        <td class="data__table-col-data" mat-cell *matCellDef="let element">
+          {{ element.designation }}
+        </td>
+      </ng-container>
+
+      <!-- Task Description Column -->
+      <ng-container matColumnDef="task">
+        <th class="data__table-col-header" mat-header-cell *matHeaderCellDef>
+          Task Description
+        </th>
+        <td class="data__table-col-data" mat-cell *matCellDef="let element">
+          {{ element.taskDescription }}
+        </td>
+      </ng-container>
+
+      <!-- ETC Column -->
+      <ng-container matColumnDef="ETC">
+        <th class="data__table-col-header" mat-header-cell *matHeaderCellDef>
+          ETC
+        </th>
+        <td class="data__table-col-data" mat-cell *matCellDef="let element">
+          {{
+            element.ETC
+              | parseDateTime : "YYYY-MM-DDTHH:mm:ss.SSSZ" : "MMM D, YYYY"
+          }}
+        </td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th class="data__table-col-header" mat-header-cell *matHeaderCellDef>
+          Actions
+        </th>
+        <td class="data__table-col-data" mat-cell *matCellDef="let element">
+          <div class="data__table-actions-box">
+            <button class="btn btn--icon-only" (click)="openTaskModal(element)">
+              <svg-icon
+                class="data__table-edit-icon"
+                src="assets/icons/icon-pencil.svg"
+              ></svg-icon>
+            </button>
+            <button
+              class="btn btn--icon-only"
+              (click)="openDeleteWarningDialog(element)"
+            >
+              <svg-icon
+                class="data__table-delete-icon"
+                src="assets/icons/icon-feed-delete.svg"
+              ></svg-icon>
+            </button>
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container>
+        <tr class="mat-row" *matNoDataRow>
+          <td
+            class="data__table-empty-data mat-cell mat-cell--empty"
+            [ngStyle]="{ height: this.paginationData.pageSize * 36 + 'px' }"
+            [attr.colspan]="displayedColumns.length"
+          >
+            <div class="no-data">
+              <img
+                class="img no-data__img"
+                src="assets/illustrations/table-no-record.png"
+                alt=""
+              />
+              <div>
+                <p class="no-data__text--main">No Records found</p>
+                <p class="no-data__text--sub">Try again after sometime..</p>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <app-te-paginator
+      [currentPage]="paginationData.page"
+      [pageSize]="paginationData.pageSize"
+      [totalPages]="paginationData.totalPages"
+      (pageChange)="onPageChange($event)"
+    ></app-te-paginator>
+  </div>
+</app-te-widget-card>

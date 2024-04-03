@@ -1,0 +1,64 @@
+.te-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.05);
+  padding: 0 1rem;
+
+  position: sticky;
+  top: 0;
+  right: 0;
+  z-index: 101;
+
+  &__panel {
+    min-height: 95vh;
+    background: #fafbfc;
+    padding: 1rem 1.2rem;
+
+    &--full {
+      padding: 0;
+      margin-top: 0;
+    }
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+
+  &__dp {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #5d5fef;
+    color: #fff;
+    font-family: "Exo 2";
+    font-size: 1.2rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__btn {
+    color: #455a64;
+    font-family: "Exo 2";
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  &__icon {
+    transition: all 0.3s ease-out;
+    transform: rotate(0);
+  }
+  &__icon--rotated {
+    transform: rotate(180deg);
+  }
+  &-options {
+    &__text {
+      font-size: 1.2rem;
+    }
+    &__logout-text {
+      color: #ff4b28;
+    }
+  }
+}
