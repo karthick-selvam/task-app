@@ -5,9 +5,6 @@
 export const environment = {
   production: false,
   NODE_API_URL: 'http://localhost:8000',
-  FLASK_API_URL: 'http://localhost:8085',
-  // FLASK_API_URL: 'http://192.168.29.129:8085',
-  solutionName: 'SMART_LOGISTICS',
 };
 
 /*
