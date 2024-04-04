@@ -26,4 +26,9 @@ app.use("/api/users", authRouter);
 app.use("/api/org", orgRouter);
 app.use("/api/tasks", tasksRouter);
 
+// Serve UI
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+});
+
 module.exports = app;

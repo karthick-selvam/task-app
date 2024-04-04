@@ -1,5 +1,5 @@
 {
-  "name": "third-eye",
+  "name": "Tasks",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,8 +10,7 @@
     "server": "npm run watch --prefix api",
     "client": "npm start --prefix client",
     "watch": "npm run server && npm run client",
-    "deploy:dev": "npm run build-prod --prefix client && npm run watch:dev --prefix api",
-    "deploy": "npm run build-prod --prefix client && npm run watch:prod --prefix api"
+    "deploy": "npm run build-prod --prefix client && npm run watch --prefix api"
   },
   "keywords": [],
   "author": "",

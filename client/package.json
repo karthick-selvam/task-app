@@ -1,5 +1,5 @@
 {
-  "name": "Thirdeye",
+  "name": "Tasks",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -24,14 +24,8 @@
     "@lottiefiles/lottie-player": "^2.0.2",
     "@popperjs/core": "^2.11.8",
     "angular-svg-icon": "^16.0.0",
-    "bootstrap": "^5.2.3",
-    "highcharts": "^11.3.0",
-    "libphonenumber-js": "^1.10.54",
     "moment": "^2.29.4",
-    "ngx-lottie": "^10.0.0",
-    "ngx-material-timepicker": "^13.1.1",
     "rxjs": "~7.8.0",
-    "socket.io-client": "^4.7.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },
