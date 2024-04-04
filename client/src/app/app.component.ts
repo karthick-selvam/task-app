@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
       .pipe(takeUntil(this.destroyer$))
       .subscribe({
         next: (res: any) => {
-          if (res.signedin) this.authService.signedin$.next(true);
+          if (res.signedin) this.isUserAuthenticated = true;
         },
       });
 
@@ -50,8 +50,8 @@ export class AppComponent implements OnInit {
     });
 
     this.authService.signedin$.pipe(takeUntil(this.destroyer$)).subscribe({
-      next: (res: boolean | null) => {
-        if (res !== null) this.isUserAuthenticated = res;
+      next: (res: any) => {
+        if (typeof res === 'boolean') this.isUserAuthenticated = res;
       },
     });
   }

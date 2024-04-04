@@ -7,6 +7,7 @@ import { DashboardService } from '../../services/dashboard.service';
 import { DeleteWarningDialogComponent } from 'src/app/shared/components/delete-warning-dialog/delete-warning-dialog.component';
 import { take } from 'rxjs';
 import { SnackbarService } from 'src/app/shared/services/snackbar.service';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-data-table',
@@ -29,14 +30,25 @@ export class DataTableComponent {
   };
 
   dataSource = new MatTableDataSource<any>();
-
+  userRole: string = '';
   constructor(
     private dashboardService: DashboardService,
+    private authService: AuthService,
     private matDialog: MatDialog,
     private snackbarService: SnackbarService
   ) {}
 
   ngOnInit() {
+    this.authService.user$.subscribe((user: any) => {
+      if (user.role) this.userRole = user.role;
+
+      if (this.userRole !== 'admin') {
+        const index = this.displayedColumns.indexOf('actions');
+        if (index !== -1) {
+          this.displayedColumns.splice(index, 1);
+        }
+      }
+    });
     this.getTasks();
   }
 

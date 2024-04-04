@@ -14,7 +14,7 @@ const jwtOptions = {
 // Configure JWT strategy
 const jwtStrategy = new JWTStrategy(jwtOptions, async (jwtPayload, done) => {
   try {
-    const user = await User.findById(jwtPayload.id);
+    const user = await User.findById(jwtPayload.id).select("-password");
     if (user) {
       return done(null, user);
     } else {

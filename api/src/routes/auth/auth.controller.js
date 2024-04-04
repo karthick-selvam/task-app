@@ -79,7 +79,7 @@ exports.login = async (req, res) => {
 
 exports.checkSignedIn = async (req, res) => {
   try {
-    res.status(200).json({ signedin: true });
+    res.status(200).json({ signedin: true, user: req.user });
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
   }

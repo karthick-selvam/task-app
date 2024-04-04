@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, Subject } from 'rxjs';
+import { BehaviorSubject, catchError, Subject, tap, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { user } from '../interfaces/auth.model';
 @Injectable({
@@ -43,6 +43,17 @@ export class AuthService {
     return this.http
       .get<SignedinResponse>(`${this.NODE_API_URL}/users/signedin`)
       .pipe(
+        tap((res) => {
+          if (res.signedin) {
+            this.signedin$.next(true);
+            this.user$.next(res.user);
+          }
+        }),
+        map((res: any) => {
+          return {
+            signedin: res?.signedin,
+          };
+        }),
         catchError((err) => {
           this.signedin$.next(false);
           throw err;
@@ -67,7 +78,6 @@ export class AuthService {
 }
 
 export interface SignedinResponse {
-  authenticated: boolean;
-  username: string;
-  userId: string;
+  signedin: boolean;
+  user: any;
 }

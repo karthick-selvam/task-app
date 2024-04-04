@@ -11,10 +11,16 @@ exports.getAllTasks = async (req, res) => {
 
     // Fetch user details from request
     const user = req.user;
-
+    let filters = {};
+    if (user.role === "admin") {
+      filters["orgId"] = user.orgId;
+    } else {
+      filters["orgId"] = user.orgId;
+      filters["assigneeId"] = user._id;
+    }
     // Create separate query objects for counting and fetching tasks
-    let countQuery = Tasks.countDocuments({ orgId: user.orgId });
-    let tasksQuery = Tasks.find({ orgId: user.orgId });
+    let countQuery = Tasks.countDocuments(filters);
+    let tasksQuery = Tasks.find(filters);
 
     // Query total count of tasks
     const totalTasks = await countQuery;

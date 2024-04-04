@@ -1,6 +1,6 @@
 <app-te-widget-card>
   <div class="data__table-box">
-    <div class="data__table-ctrls">
+    <div class="data__table-ctrls" *ngIf="userRole === 'admin'">
       <button class="btn btn--primary" (click)="openTaskModal()">
         Create Task
       </button>
@@ -57,7 +57,7 @@
       </ng-container>
 
       <!-- Actions Column -->
-      <ng-container matColumnDef="actions">
+      <ng-container matColumnDef="actions" *ngIf="userRole === 'admin'">
         <th class="data__table-col-header" mat-header-cell *matHeaderCellDef>
           Actions
         </th>
